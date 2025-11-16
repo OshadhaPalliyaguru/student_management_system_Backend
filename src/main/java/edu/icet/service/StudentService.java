@@ -57,6 +57,25 @@ public class StudentService {
     }
 
 
+    public List<StudentDto> allStudents(){
+        List<StudentEntity> allstudents = studentRepository.findAll();
+        ArrayList<StudentDto> studentDtoArrayList = new ArrayList<>();
+
+        for (StudentEntity studentEntity : allstudents){
+            studentDtoArrayList.add(new StudentDto(
+                    studentEntity.getId(),
+                    studentEntity.getName(),
+                    studentEntity.getDob(),
+                    studentEntity.getGender(),
+                    studentEntity.getPhonenumber(),
+                    studentEntity.getAddress(),
+                    studentEntity.getGradeLevel(),
+                    studentEntity.getEmail()
+            ));
+        }
+        return studentDtoArrayList;
+    }
+
 
 
 

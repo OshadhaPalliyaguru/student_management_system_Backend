@@ -5,6 +5,8 @@ import edu.icet.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/student")
 
@@ -33,5 +35,10 @@ public class StudentController {
         return studentService.delete(id);
     }
 
+    @GetMapping("/allStudents")
+    public List<StudentDto> allStudents(){
+
+     return studentService.allStudents();
+    }
 
 }

@@ -78,7 +78,21 @@ public class StudentService {
 
 
 
+    public StudentDto searchByID(String id){
+        Optional<StudentEntity> byId = studentRepository.findById(Long.valueOf(id));
+        StudentEntity studentEntity = byId.get();
+        return new StudentDto(
+                studentEntity.getId(),
+                studentEntity.getName(),
+                studentEntity.getDob(),
+                studentEntity.getGender(),
+                studentEntity.getPhonenumber(),
+                studentEntity.getAddress(),
+                studentEntity.getGradeLevel(),
+                studentEntity.getEmail()
 
+        );
+    }
 
 
 

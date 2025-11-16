@@ -51,6 +51,13 @@ public class StudentService {
 
     }
 
+    public String delete(String id){
+        studentRepository.deleteById(Long.valueOf(id));
+        return "deleted sucessfull";
+    }
+
+
+
 
 
 

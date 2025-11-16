@@ -15,7 +15,7 @@ import java.time.LocalDate;
 @Table(name = "student")
 public class StudentEntity {
     @Id
-    private String id;
+    private Long id;
     private String name;
     private LocalDate dob;
     private String gender;

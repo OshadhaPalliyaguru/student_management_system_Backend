@@ -32,7 +32,24 @@ public class StudentService {
     }
 
 
+    public String update(StudentDto studentDto){
 
+        StudentEntity studentEntity = studentRepository.findById(studentDto.getId()).get();
+
+        studentEntity.setName(studentDto.getName());
+        studentEntity.setDob(studentDto.getDob());
+        studentEntity.setGender(studentDto.getGender());
+        studentEntity.setPhonenumber(studentDto.getPhonenumber());
+        studentEntity.setAddress(studentDto.getAddress());
+        studentEntity.setGradeLevel(studentDto.getGradeLevel());
+        studentEntity.setEmail(studentDto.getEmail());
+
+        studentRepository.save(studentEntity);
+
+        return "Updated Sucessfull";
+
+
+    }
 
 
 

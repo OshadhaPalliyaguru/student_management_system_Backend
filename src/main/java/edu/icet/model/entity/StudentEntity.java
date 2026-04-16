@@ -14,7 +14,9 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "student")
 public class StudentEntity {
+
     @Id
+
     private Long id;
     private String name;
     private LocalDate dob;

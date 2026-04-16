@@ -16,7 +16,7 @@ public class StudentService {
     @Autowired
     StudentRepository studentRepository;
 
-    public void add(StudentDto studentDto){
+    public String add(StudentDto studentDto){
 
         studentRepository.save(new StudentEntity(
                 studentDto.getId(),
@@ -29,6 +29,7 @@ public class StudentService {
                 studentDto.getEmail()
 
         ));
+        return "addes sucessfull";
     }
 
 
